@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Maps</title>
+    </head>
+    <body>
+        <p id="result"></p>
+       <script>
+        var numbers =[2,9,67,61,47];
+        function myfunction(num)
+        {
+            return num * 2;
+        }
+        var result = numbers.map(myfunction);
+        document.getElementById("result").innerHTML = result;
+       </script>
+        
+    </body>
+</html>
