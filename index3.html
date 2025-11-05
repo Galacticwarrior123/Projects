@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Eval</title>
-</head>
-<body>
-    <button onclick="myfunction()">Click me</button>
-    <p id="result"></p>
-    <script>
-        function myfunction() {
-            var x = 10;
-            var y = 20;
-            var a=eval ("x + y") + "<br>";
-            var b=eval ("3 + 4") + "<br>";
-            var c=eval ("x - y") + "<br>";
-
-            var res = a + b + c
-            document.getElementById("result").innerHTML = res;
-        }
-    </script>
-</body>
+    <head>
+        <title>Arrow Function</title>
+    </head>
+    <body>
+        <p id="result"></p>
+        <script>
+           add=(a,b)=>a+b;
+           document.getElementById("result").innerHTML=add(7,3);
+        </script>
+    </body>
 </html>

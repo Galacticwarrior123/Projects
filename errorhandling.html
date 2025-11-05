@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Error Handling</title>
+    </head>
+    <body>
+        <p id="error_message"> </p>
+        <script>
+            try {
+                addalart("Welcome guest!");
+            }
+            catch (err){
+                document.getElementById("error_message").innerHTML = "An error occurred: " + err.message;
+            }
+            </script>
+    </body>
+</html>
