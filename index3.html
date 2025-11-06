@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Arrow Function</title>
+        <title>While Loop</title>
     </head>
     <body>
-        <p id="result"></p>
-        <script>
-           add=(a,b)=>a+b;
-           document.getElementById("result").innerHTML=add(7,3);
-        </script>
+     <p id="result"></p>
+     <script>
+        var text = "";
+        var i = 0;
+        while(i < 10){
+            text += "The number is " + i + "<br>";
+            i++;
+        }
+        document.getElementById("result").innerHTML = text;
+     </script>
     </body>
 </html>
