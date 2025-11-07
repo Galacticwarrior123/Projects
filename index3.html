@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>While Loop</title>
-    </head>
-    <body>
-     <p id="result"></p>
-     <script>
-        var text = "";
-        var i = 0;
-        while(i < 10){
-            text += "The number is " + i + "<br>";
-            i++;
+
+<body>
+    <p id="hello"></p>
+    <p id="hi"></p>
+    <script>
+        class Student {
+            constructor(name) {
+                this.studentname = name;
+            }
+            static hello() {  // static method
+                return "Hello!!";
+            }
+            hi() {
+                return "Hi " + this.studentname;
+            }
         }
-        document.getElementById("result").innerHTML = text;
-     </script>
-    </body>
+        myname = new Student("Carol");
+        document.getElementById("hello").innerHTML = Student.hello();
+        document.getElementById("hi").innerHTML = myname.hi();
+
+    </script>
+</body>
+
 </html>

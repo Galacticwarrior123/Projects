@@ -1,19 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Maps</title>
-    </head>
-    <body>
-        <p id="result"></p>
-       <script>
-        var numbers =[2,9,67,61,47];
-        function myfunction(num)
-        {
-            return num * 2;
+
+<head>
+    <title>Inheritence</title>
+</head>
+
+<body>
+    <p id="details"></p>
+    <script>
+        class car {
+            constructor(brand) {
+                this.brand = brand;
+            }
+            present() {
+                return "I have a " + this.brand;
+            }
         }
-        var result = numbers.map(myfunction);
-        document.getElementById("result").innerHTML = result;
-       </script>
-        
-    </body>
+
+        class model extends car {
+            constructor(brand, model) {
+                super(brand);
+                this.model = model;
+            }
+
+            show() {
+                return this.present() + " It is a " + this.model;
+            }
+        }
+
+        mycar = new model("Ford", "Mustang");
+        document.getElementById("details").innerHTML = mycar.show();
+    </script>
+</body>
+
 </html>
