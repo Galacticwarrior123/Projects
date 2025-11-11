@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html>
-
+<head>
+    <title>Promise</title>
+</head>
 <body>
-    <p id="hello"></p>
-    <p id="hi"></p>
+    <p id="result"></p>
     <script>
-        class Student {
-            constructor(name) {
-                this.studentname = name;
-            }
-            static hello() {  // static method
-                return "Hello!!";
-            }
-            hi() {
-                return "Hi " + this.studentname;
-            }
+        function mydisplayer(some) {
+            document.getElementById("result").innerHTML = some;
         }
-        myname = new Student("Carol");
-        document.getElementById("hello").innerHTML = Student.hello();
-        document.getElementById("hi").innerHTML = myname.hi();
 
+        function sum(a,b){
+            sum=a+b;
+            mydisplayer(sum);
+        }
+         let mypromise = new Promise(function(myResolve, myReject) {
+            let x = 0;
+
+            // The producing code (this may take some time)
+
+            if (x == 0) {
+                myResolve("OK");
+            } else {
+                myReject("Error");
+            }
+            });
+            mypromise.then(
+            function(value) {
+                sum(5, 10);
+            },
+            function(error) {
+                mydisplayer(error);
+            }
+            );
     </script>
 </body>
-
 </html>

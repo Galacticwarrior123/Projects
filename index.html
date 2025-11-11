@@ -1,26 +1,19 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Classes in js</title>
+        <title></title>
     </head>
     <body>
-        <p id="student1"></p>
-        <p id="student2"></p>
-       <script>
-          class Student {
-            constructor(name,year){
-                this.name = name;
-                this.year = year;
+        <p id="result"></p>
+        <script>
+            async function name(a,b) {
+                var response = await a + b;
+                display(response);
             }
-            age(){
-                let currentYear = new Date().getFullYear();
-                return currentYear - this.year;
+            function display(data) {
+                document.getElementById("result").innerHTML = data;
             }
-          }
-            let student1 = new Student("Alice", 2000);
-            let student2 = new Student("Bob", 1998);
-            document.getElementById("student1").innerHTML = student1.name + " is " + student1.age() + " years old.";
-            document.getElementById("student2").innerHTML = student2.name + " is " + student2.age() + " years old.";
-       </script>    
+            name(5,10);
+        </script>
     </body>
 </html>

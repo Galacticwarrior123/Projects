@@ -1,36 +1,15 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-    <title>Inheritence</title>
+    <title>Json</title>
 </head>
-
 <body>
-    <p id="details"></p>
-    <script>
-        class car {
-            constructor(brand) {
-                this.brand = brand;
-            }
-            present() {
-                return "I have a " + this.brand;
-            }
-        }
+    <p id="result"></p>
 
-        class model extends car {
-            constructor(brand, model) {
-                super(brand);
-                this.model = model;
-            }
-
-            show() {
-                return this.present() + " It is a " + this.model;
-            }
-        }
-
-        mycar = new model("Ford", "Mustang");
-        document.getElementById("details").innerHTML = mycar.show();
+    <script>   
+       myobj={"name":"John", "age":30, "city":"New York"};
+       document.getElementById("result").innerHTML=JSON.stringify(myobj);
+       document.getElementById("result").innerHTML=JSON.parse('{"name":"John", "age":30, "city":"New York"}').name;
     </script>
 </body>
-
 </html>
