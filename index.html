@@ -1,52 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+    <head>
+        <title>Navigation bar</title>
+        <style>
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+                margin: 0;
+            }
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+            .topnav {
+                overflow: hidden;
+                background-color: #333;
+            }
 
-<body>
-    <h1>REAL TIME VALIDATION USING JS</h1>
-    <hr>
-    <form id="loginForm" onsubmit="validate(event)">
-        <!-- Fieldset groups related elements in a form -->
-        <fieldset>
+            .topnav a {
+                float: left;
+                color: #f2f2f2;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                font-size: 17px;
+            }
 
-            <!-- Email input field -->
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email">
-            </div>
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
 
-            <!-- Password input field with a minimum length requirement -->
-            <div>
-                <label for="password">Password:</label>
-                <!-- minlength attribute ensures the password is at least 8 characters long -->
-                <input type="password" id="password" name="password" minlength="8">
-            </div>
-
-            <!-- Age input field with minimum and maximum value requirements -->
-            <div>
-                <label for="age">Age:</label>
-                <!-- min and max attributes define the acceptable range of ages -->
-                <input type="number" id="age" name="age" min="12" max="50">
-            </div>
-
-            <!-- Submit button for the form -->
-            <button type="submit">Login</button>
-
-        </fieldset>
-    </form>
-
-    <!-- Div for displaying validation messages -->
-    <div id="message"></div>
-
-    <!-- Link to the external JavaScript file -->
-    <script src="script.js"></script>
-
-</body>
-
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="topnav">
+            <a class="active" href="#">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </div>
+        
+    </body>
 </html>
