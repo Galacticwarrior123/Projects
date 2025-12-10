@@ -1,45 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Navigation bar</title>
-        <style>
-            body {
-                font-family: Arial, Helvetica, sans-serif;
-                margin: 0;
-            }
-
-            .topnav {
-                overflow: hidden;
-                background-color: #333;
-            }
-
-            .topnav a {
-                float: left;
-                color: #f2f2f2;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-                font-size: 17px;
-            }
-
-            .topnav a:hover {
-                background-color: #ddd;
-                color: black;
-            }
-
-            .topnav a.active {
-                background-color: #04AA6D;
-                color: white;
-            }
-        </style>
+        <title>Slider</title>
     </head>
     <body>
-        <div class="topnav">
-            <a class="active" href="#">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
-        </div>
-        
+        <img src="AMERICA.png" class="Myslides" alt="America" style="height:500px;width:500px;">
+        <img src="bugatata.jpeg" class="Myslides" alt="Buggati" style="height:500px;width:500px;">
+        <img src="aple.jpeg" class="Myslides" alt="Apple" style="height:500px;width:500px;">
+        <script>
+         var myindex=0;
+         slider();
+            function slider(){
+                var i;
+                var x=document.getElementsByClassName("Myslides");
+                for(i=0;i<x.length;i++){
+                    x[i].style.display="none";
+                }
+                myindex++;
+                if(myindex>x.length){myindex=1}
+                x[myindex-1].style.display="block";
+                setTimeout(slider,2000);
+            }
+        </script>
     </body>
 </html>
