@@ -1,26 +1,49 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Slider</title>
-    </head>
-    <body>
-        <img src="AMERICA.png" class="Myslides" alt="America" style="height:500px;width:500px;">
-        <img src="bugatata.jpeg" class="Myslides" alt="Buggati" style="height:500px;width:500px;">
-        <img src="aple.jpeg" class="Myslides" alt="Apple" style="height:500px;width:500px;">
-        <script>
-         var myindex=0;
-         slider();
-            function slider(){
-                var i;
-                var x=document.getElementsByClassName("Myslides");
-                for(i=0;i<x.length;i++){
-                    x[i].style.display="none";
-                }
-                myindex++;
-                if(myindex>x.length){myindex=1}
-                x[myindex-1].style.display="block";
-                setTimeout(slider,2000);
-            }
-        </script>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Display</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+ <span class="border trans" style="font-size: 40px;">
+    <center>Welcome all to my website</center>
+ </span>
+ <section class="section section-dark">
+    <h2>Section 1</h2>
+    <p>This is the content for section 1.</p>
+ </section>
+    <div class="pimg3">
+    <div class="ptext">
+      <span class="border trans">
+        "The best way to predict the future is to create it." - Peter Drucker
+      </span>
+    </div>
+    </div>
+    <section class="section section-light">
+        <h2>Section 2</h2>
+        <p>This is the content for section 2.</p>
+       
+    </section>
+    <div class="pimg2">
+        <div class="ptext">
+            <span class="border trans">
+                "The only limit to our realization of tomorrow will be our doubts of today." - Franklin D. Roosevelt
+            </span>
+        </div>
+    </div>
+    <section class="section section-dark">
+        <h2>Section 3</h2>
+        <p>This is the content for section 3.</p>
+    </section>
+    <div class="pimg1">
+        <div class="ptext">
+            <span class="border trans">
+                "The best way to predict the future is to create it." - Peter Drucker
+            </span>
+        </div>
+    </div>
+</body>
 </html>

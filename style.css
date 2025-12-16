@@ -1,34 +1,49 @@
-  @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
-
-  html {
-      height: 100%;
-      width: 100%;
-      font-family: 'Poppins', sans-serif;
-  }
-
-  h1 {
-      text-align: center;
-  }
-
-  form {
-      max-width: 300px;
-      margin: 0 auto;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-  }
-
-  div {
-      margin-bottom: 10px;
-      font-family: 'Poppins', sans-serif;
-  }
-
-  button {
-      font-family: 'Poppins', sans-serif;
-      cursor: pointer;
-  }
-
-  #message {
-      text-align: center;
-      font-size: 20px;
-      margin-top: 10px;
-  }
+.pimg1, .pimg2, .pimg3 {
+    position: relative;
+    background-color: #f1f1f1;
+    padding: 20px;
+    margin: 20px 0;
+    background-position: center;
+    background-size: cover;
+}
+.pimg1 {
+    background-image: url('AMERICA.png');
+    min-height: 100%;
+}
+.pimg2 {
+    background-image: url('bugatata.jpeg');
+    min-height: 400px;
+}
+.pimg3 {
+    background-image: url('brown.jpg');
+    min-height: 400px;
+}
+.section {
+    text-align: center;
+    padding: 50px 80px;
+}
+.section-light {
+    background-color: #f4f4f4;
+    color: #666;
+}
+.section-dark {
+    background-color: #282e34;
+    color: #ddd;
+}
+.ptext {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 18px;
+}
+.ptext .border .trans {
+    background-color: #111;
+    color: #fff;
+    padding: 20px;
+}
+@media(max-width:568px) {
+    .pimg1,
+    .pimg2,
+    .pimg3 {
+        background-attachment: scroll;
+    }
+}
