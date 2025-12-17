@@ -1,49 +1,50 @@
-.pimg1, .pimg2, .pimg3 {
-    position: relative;
-    background-color: #f1f1f1;
+.footer {
+    background-color: rgb(41, 40, 40);
+    color: beige;
+    display: flex;
     padding: 20px;
-    margin: 20px 0;
-    background-position: center;
-    background-size: cover;
+    justify-content: space-around;
 }
-.pimg1 {
-    background-image: url('AMERICA.png');
-    min-height: 100%;
+
+.footer-section {
+    width: 30%;
+    margin-bottom: 20px;
 }
-.pimg2 {
-    background-image: url('bugatata.jpeg');
-    min-height: 400px;
+
+.footer-section h3 {
+    border: 2px solid black;
+    padding-bottom: 5px;
 }
-.pimg3 {
-    background-image: url('brown.jpg');
-    min-height: 400px;
+
+.footer-section ul {
+    padding: 10px;
 }
-.section {
+
+.footer-section li {
+    margin: 8px 0;
+}
+
+.footer-section a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.footer-section:hover {
+    text-decoration: underline;
+}
+
+.footer-section button {
+    padding: 5px 10px;
+}
+
+.footer-bottom {
+    background-color: black;
+    color: whitesmoke;
     text-align: center;
-    padding: 50px 80px;
+    padding: 10px;
 }
-.section-light {
-    background-color: #f4f4f4;
-    color: #666;
-}
-.section-dark {
-    background-color: #282e34;
-    color: #ddd;
-}
-.ptext {
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    font-size: 18px;
-}
-.ptext .border .trans {
-    background-color: #111;
-    color: #fff;
-    padding: 20px;
-}
-@media(max-width:568px) {
-    .pimg1,
-    .pimg2,
-    .pimg3 {
-        background-attachment: scroll;
-    }
+
+.footer-bottom a {
+    color: white;
+    text-decoration: none;
 }
