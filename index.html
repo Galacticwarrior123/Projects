@@ -43,6 +43,68 @@
         .myslides {
             display: none;
         }
+        .section {
+            padding: 60px 20px;
+        }
+
+        .section-dark {
+            background-color: #333;
+            color: white;
+        }
+        .border-trans {
+            background-color: rgba(0, 0, 0, 0.4);
+            color: #fff;
+            padding: 20px;
+            border: 2px solid #f1f1f1;
+        }
+        .border {
+            background-color: #fff;
+            color: #333;
+            padding: 20px;
+            border: 2px solid #f1f1f1;
+        }
+        .pimg3 {
+            background-image: url("Burger.jpg");
+            min-height: 400px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+        .ptext {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            text-align: center;
+            color: #000;
+        }
+        .food-title{
+            font-size: 24px;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .card{
+            background-color: #fff;
+            border: 1px solid #f1f1f1;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 15px;
+            text-align: center;
+            width: 300px;
+        }
+        .card img{
+            border-radius: 5px;
+            height: 200px;
+            width: 100%;
+        }
+        
     </style>
     <body>
         <div class="topnav">
@@ -88,6 +150,76 @@
                 }
 
             </script>
+
+        </section>
+        <section class="Food-cards">
+            <h2>Popular foods</h2>
+            <div class="card-container">
+                <div class="card">
+                    <img src="Burger.jpg" alt="Burger" >
+                    <h3>Burger</h3>
+                    <p>Delicious beef burger with fresh lettuce, tomato, and cheese.</p>
+                </div>
+                <div class="card">
+                    <img src="pizza.png" alt="Pizza">
+                    <h3>Pizza</h3>
+                    <p>Classic margherita pizza with fresh basil and mozzarella cheese.</p>
+                </div>
+                <div class="card">
+                    <img src="pasta.jpg" alt="Pasta">
+                    <h3>Pasta</h3>
+                    <p>Italian pasta with rich tomato sauce and parmesan cheese.</p>
+                </div>
+            </div>
+
+        </section>
+        <section class="section section-dark">
+            <h2>Food</h2>
+            <p>Food is any substance consumed to provide nutritional support for an organism.</p>
+
+        </section>
+        <div class="pimg3">
+            <div class="ptext">
+                <span class="border-trans">Food is any substance consumed to provide nutritional support for an organism.</span>
+                <br>
+                <br>
+                <br>
+            </div>
+        </div>
+        <center><h2>Pizza</h2></center>
+        <p><img src="pizza.png" style="width:170px; height:170px;margin-left:15px; float:right;">
+        
+            Pizza (Italian: [ˈpittsa], Neapolitan: [ˈpittsə]) is a savory dish of Italian origin consisting of a usually round,
+        
+            flattened base of leavened wheat-based dough topped with tomatoes, cheese, and often various other ingredients (such
+            as
+        
+            anchovies, mushrooms, onions, olives, pineapple, meat, etc.), which is then baked at a high temperature,
+            traditionally
+        
+            in a wood-fired oven.[1] A small pizza is sometimes called a pizzetta. A person who makes pizza is known as a
+            pizzaiolo.
+        
+        </p>
+        <center>
+            <h2>Pasta</h2>
+        </center>
+        <p><img src="pasta.jpg" style="width:170px; height:170px;margin-left:15px; float:right;">
+        
+        Pasta is a type of food typically made from an unleavened dough of
+        wheat flour mixed with water or eggs, and formed into sheets or other shapes, then cooked by boiling or baking.        
+        Pasta        
+        was originally only made with durum, although the definition has been expanded to include alternatives for a       
+        gluten-free 
+        diet, such as rice flour, or legumes such as beans or lentils. Pasta is believed to have developed independently
+        in
+        Italy and is a staple food of Italian cuisine,[1][2] with evidence of Etruscans making pasta as early as 400 BCE    
+        in
+        Italy.
+        
+        </p>
+        <section class="section section-dark">
+            All rights reserved by Codingal  
         </section>
     </body>
 </html>
