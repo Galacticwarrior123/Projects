@@ -1,9 +1,20 @@
-print("Enter your marks:")
-maths=int(input("Maths: "))
-science=int(input("Science: "))
-english=int(input("English: "))
-history=int(input("History: "))
-sum=maths+science+english+history
-print("The total marks are:", sum)
-percentage=(sum/400)*100
-print("The percentage is:", percentage)
+#Datatypes
+a=5
+b=3.14
+c="Hello"
+d=True
+
+print(type(a))
+print(type(b))
+print(type(c))
+print(type(d))
+
+#Typecasting
+e=3.15
+f=int(e)
+
+print(f)
+
+#Reverse operation
+word=input("Enter a word: ")
+print("Reversed word: " + word[::-1])
