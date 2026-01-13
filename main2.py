@@ -1,12 +1,9 @@
-x=5
-y=9
-print (x)
-print (y)
+actual_cost = float(input("Enter the actual cost of the item: "))
+sale_amount = float(input("Enter the sale amount: "))
 
-
-coding="codingal"
-print(coding)
-
-#Input command
-name=input("Enter your name: ")
-print("Hello, " + name + "! Welcome to Python programming.")
+if (sale_amount < actual_cost):
+    amount = sale_amount - actual_cost
+    print("Total profit:", amount)
+else:
+    amount = actual_cost - sale_amount
+    print("Total loss:", amount)

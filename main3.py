@@ -1,20 +1,8 @@
-#Datatypes
-a=5
-b=3.14
-c="Hello"
-d=True
-
-print(type(a))
-print(type(b))
-print(type(c))
-print(type(d))
-
-#Typecasting
-e=3.15
-f=int(e)
-
-print(f)
-
-#Reverse operation
-word=input("Enter a word: ")
-print("Reversed word: " + word[::-1])
+i=int(input("Enter an integer: "))
+if (i<15):
+    print("The number is less than 15")
+    print("I am inside the if block.")
+else:
+    print("The number is greater than or equal to 15")
+    print("I am inside the else block.")    
+print("I am outside the if-else block.")
