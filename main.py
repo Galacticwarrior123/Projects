@@ -1,6 +1,26 @@
-num = 5
-if num > 0:
-    print("The number is greater than 0.")
-num=-1
-if num < 0:
-    print("The number is less than 0.")
+a=10
+b=12
+c=0
+
+if a and b and c:
+     print("All are number have bboolean value as true")
+else:
+     print("Either one of the numbers have boolean have value as false")
+     
+a=10
+b=-10
+c=0
+
+if a>0 or b>0 or c>0:
+         print("At least one of the numbers is positive")
+else:
+    print("None of the numbers are Greater than zero")
+
+
+if b>0 or c>0:
+         print("At least one of the numbers is positive")
+else:
+    print("None of the numbers are Greater than zero")
+
+
+

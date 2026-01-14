@@ -1,8 +1,17 @@
-i=int(input("Enter an integer: "))
-if (i<15):
-    print("The number is less than 15")
-    print("I am inside the if block.")
+Height=float(input("Enter height in centimeters: "))
+Weight=float(input("Enter weight in kilograms: "))
+
+BMI=Weight/(Height/100) ** 2
+print("Your BMI is: ", BMI)
+
+if BMI<18.4:
+    print("You are underweight.")
+elif BMI<24.9:
+    print("You have a normal weight.")
+elif BMI<=29.9:
+    print("You are serverly overweight.")
+elif BMI<=34.9:
+    print("You are obese.")
 else:
-    print("The number is greater than or equal to 15")
-    print("I am inside the else block.")    
-print("I am outside the if-else block.")
+    print("You are obese.")
+    

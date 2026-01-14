@@ -1,9 +1,18 @@
-actual_cost = float(input("Enter the actual cost of the item: "))
-sale_amount = float(input("Enter the sale amount: "))
+a=10
+b=12
+c=12
 
-if (sale_amount < actual_cost):
-    amount = sale_amount - actual_cost
-    print("Total profit:", amount)
+print (a != b)
+print (b != c)
+
+a="python"
+b="coding"
+
+print(a != b)
+
+
+a = int(input("Enter number: "))
+if a % 2 != 0:
+    print(" It is an Odd number")
 else:
-    amount = actual_cost - sale_amount
-    print("Total loss:", amount)
+    print(" It is an Even number")
