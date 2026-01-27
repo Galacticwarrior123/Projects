@@ -1,6 +1,15 @@
-n = int(input("Enter a number: "))
+num = int(input("Enter a number: "))
 
-print("the numbers are from", (n, 1))
+sum = 0
 
-for i in range(n, 0, -1):
-    print(i)
+temp = num
+
+while temp > 0:
+    digit = temp % 10
+    sum += digit**3
+    temp //= 10
+
+if num == sum:
+    print(num, "is an Armstrong number.")
+else:
+    print(num, "is not an Armstrong number.")
