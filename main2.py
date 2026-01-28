@@ -1,20 +1,12 @@
-units = int(input("Enter the number of units consumed: "))
+lower = int(input("Enter the lower range: "))
+upper = int(input("Enter the upper range: "))
 
-if (units > 50):
-    amount = units * 2.50
-    surcharge = 25
-elif (units > 100):
-    amount = units * 3.70
-    surcharge = 35
-elif (units > 150):
-    amount = units * 4.25
-    surcharge = 45
-elif(units > 200):
-    amount = units * 5
-    surcharge = 50
-else:
-    amount = 0
-    surcharge = 0
+print("Prime numbers between", lower, "and", upper, ":")
 
-total_amount = amount + surcharge
-print("Total amount to be paid:", total_amount)
+for num in range(lower, upper + 1):
+    if num > 1:
+        for i in range(2, num):
+            if (num % i) == 0:
+                break
+        else:
+            print(num)

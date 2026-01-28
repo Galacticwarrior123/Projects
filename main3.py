@@ -1,15 +1,15 @@
-num = int(input("Enter a number: "))
+num = input("Enter a number: ")
 
-sum = 0
+length = len(num)
 
-temp = num
+if length >= 4:
+    mid1_length = length // 2 - 1
+    mid2_length = length // 2 
 
-while temp > 0:
-    digit = temp % 10
-    sum += digit**3
-    temp //= 10
+    mid1=int(num[mid1_length])
+    mid2=int(num[mid2_length])
 
-if num == sum:
-    print(num, "is an Armstrong number.")
+    product = mid1 * mid2
+    print("The product is:", product)
 else:
-    print(num, "is not an Armstrong number.")
+    print("The number is invalid.")
