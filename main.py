@@ -1,13 +1,15 @@
-string = input("Enter your string: ")
+import turtle
 
-char = input("Enter the character you are looking for :")
+turtle.Screen().bgcolor("lightblue")
+turtle.Screen().setup(300,400)
+polygon = turtle.Turtle()
 
-i = 0
+num_sides = 6
+angle = 360 / num_sides
+side_length=70
 
-count = 0
+for _ in range(num_sides):
+    polygon.forward(side_length)
+    polygon.left(angle)
 
-while (i < len(string)):
-    if (string[i] == char):
-        count += 1
-    i += 1
-print("The character", char, "appears", count, "times in the string.")
+turtle.done()

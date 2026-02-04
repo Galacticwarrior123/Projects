@@ -1,33 +1,17 @@
-rowSize = int(input("Enter the number of rows: "))
-if rowSize%2 == 0:
-    halfDiamondRow = int(rowSize/2 )
-else:
-    halfDiamondRow = int(rowSize/2) + 1
+import turtle
 
-space = halfDiamondRow 
+my_win = turtle.Screen()
+my_win.bgcolor("lightblue")
 
+my_win.title("My Turtle Program")
 
-for i in range(1, halfDiamondRow + 1):
-        for j in range(1, space + 1):
-            print(" ", end=" ")
-        space -= 1
-        num=1
-        for j in range(2 * i -1 ):
-            print(num, end=str(num))
-            
-            num += 1
-        print()
+my_pen=turtle.Turtle()
+size=0
 
-space =1
-
-
-for i in range(1,halfDiamondRow):
-        for j in range(1, space + 1):
-            print(" ", end=" ")
-        space += 1
-        num=1
-        for j in range(2 * (halfDiamondRow - i)  ):
-            print(num, end=str(num))
-            
-            num += 1
-        print()
+while True:
+    for i in range(4):
+        my_pen.fd(size+1)
+        my_pen.left(90)
+        size= size -5
+    size = size + 1
+    
