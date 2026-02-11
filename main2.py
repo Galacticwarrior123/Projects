@@ -1,7 +1,12 @@
-def weather_condition():
-    print("The weather is pleasant in ", spring)
-    print("The weather is the same in",autumn)
+def cube(number):
+    return number * number * number
 
-spring = "autumn"
-autumn = "spring"
-weather_condition()
+def by_three(number):
+    if number % 3 == 0:
+        return cube(number)
+    else:
+        return False
+    
+
+print(by_three(9))
+print(by_three(4))

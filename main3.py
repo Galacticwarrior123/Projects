@@ -1,32 +1,13 @@
-def add(p, q):
-    return p + q
+def factorial(x):
+    if x == 0 or x == 1:
+        return 1
+    else:
+        return x * factorial(x-1)
 
-def subtract(p, q):
-    return p - q
-
-def multiply(p, q):
-    return p * q
-
-def divide(p,q):
-    return p / q
-
-print("Please select the opperation")
-print("A. Add")
-print("B. Subtract")
-print("C. Multiply")
-print("D. Divide")  
-
-choice = input("Enter your choice (A/B/C/D): ")
-num1 = int(input('Enter first number: '))
-num2 = int(input('Enter second number: '))
-
-if choice == 'A':
-    print("Result:", add(num1, num2))
-elif choice == 'B':
-    print("Result:", subtract(num1, num2))
-elif choice == 'C':
-    print("Result:", multiply(num1, num2))
-elif choice == 'D':
-    print("Result:", divide(num1, num2))
-else:
-    print("Invalid choice")
+print(factorial.__doc__)
+print("factorial of zero is:", factorial(0))
+print("factorial of one is:", factorial(1))
+print("factorial of two is:", factorial(2))
+print("factorial of three is:", factorial(3))
+print("factorial of four is:", factorial(4))
+print("factorial of five is:", factorial(5))
