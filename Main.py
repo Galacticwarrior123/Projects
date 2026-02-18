@@ -1,8 +1,5 @@
-print('Half pyramid pattern of stars (*)')
-
-n = int(input('Enter the number of rows: '))
-
-for i in range(n):
-   for j in range (i+1):
-       print('*', end=' ')
-   print()
+try:
+    number = int(input("Enter a number: "))
+except ValueError as ex:
+    print("Invalid input. Please enter a valid number.")
+    print("Error details:", ex)
