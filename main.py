@@ -1,7 +1,12 @@
-a = input ("Enter a word: ")
-for i in a:
-    if(i=='a'):
-        print("A is found")
-        break
+import random 
+playing = True
+number = str(random.randint(0,9))
+print ("I will generate a number from 1 to 9,and you have to guess one digit at a time")
+print("The game ends when you get 1 hero!")
+while playing:
+    guess = input("Enter your guess:")
+    if guess == number:
+        print("Congratulations! You guessed the number.")
+        playing = False
     else:
-        print("A is not found")
+        print("Sorry, try again.")
