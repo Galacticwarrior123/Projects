@@ -1,10 +1,12 @@
-from datetime import date,time,datetime
+empty_list=[]
+print()
 
-today = date.today()
-now = datetime.now()
+numbers =[1,2,3,4,5]
+print(numbers)
 
-print("Today's date:", today)
-print("Current time:", now )
+triples = [1,2,3]*3
+print(triples)
 
-print("Date components", today.year, today.month, today.day)
-    
+aList = [100,200,300,400,500]
+aList = aList[::-1]
+print(aList,"\n")

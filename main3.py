@@ -1,11 +1,14 @@
-import math 
+l = [1, 2, 3, 4, 5]
+print(l)
 
-print("The floor and ceiling value are:", str(math.ceil(23.56)), str(math.floor(23.56)))
+count = 0
+for i in l:
+    count += i
 
-x = 10
-y = -5
+avg = count / len(l)
+print(avg)
 
-print(str(math.copysign(x, y)))
-
-print(math.fabs(-96))
-print(math.fabs(96))
+print(count)
+l.sort()
+print(l[0])
+print(l[-1])
