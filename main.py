@@ -1,20 +1,18 @@
-tuplex = ("tuple",False,3.2,1)
-print(tuplex)
+student_data= {
+    "id1": {"name": "John Doe", "age": 20, "major": "Computer Science"},
+    "id2": {"name": "Jane Smith", "age": 22, "major": "Mathematics"},
+    "id3": {"name": "Alice Johnson", "age": 21, "major": "Physics"},
+    "id4": {"name": "Bob Brown", "age": 23, "major": "Chemistry"},
+}
 
-tuplex = (4,7,8,3,9,0)
-print(tuplex)
-tuplex=tuplex + (1,)
-print(tuplex)
+result = {}
+seen_key = []
 
-tuplex = (50,30,20,10,60,70,50,50)
-print(tuplex.count(50))
+for student_id,details in student_data.items():
+    unique_key = (details["name"], details["age"], details["major"])
+    if unique_key not in seen_key:
+        seen_key.append(unique_key)
+        result[student_id]=details
 
-tuplex =(2,3,4,5,7,9,6,7,3,4)
-print("Original tuple:", tuplex)
-
-_slice = tuplex [3:5]
-print("Sliced tuple:", _slice)
-
-_slice = tuplex [:6]
-print("Sliced tuple:", _slice)
-    
+for k,v in result.items():
+    print(k,":",v)

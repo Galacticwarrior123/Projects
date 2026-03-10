@@ -1,15 +1,9 @@
-def palindrome(r):
-    e = len(r) - 1
-    s = 0
-    while(s<e):
-        if (r[s] != r[e]):
-            return False
-        s += 1
-        e -= 1
-        return True
+test_dict = {'Codingal': 2, 'is':2,'best':2, 'for' : 2, 'Coding':1}
 
-r = (1,2,3,3,2,1)
-if(palindrome(r)):
-    print("The tuple is a palindrome")
-else:
-    print("The tuple is not a palindrome")
+K=2
+
+res=0
+for key in test_dict:
+    if test_dict[key] == K:
+        res += 1
+print("Frequency of K is:"+ str(res))
