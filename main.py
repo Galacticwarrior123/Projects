@@ -1,76 +1,76 @@
 import pygame
 import random
 
+SCREEN_WIDTH, SCREEN_HEIGHT = 500, 400
+MOVEMENT_SPEED = 5
+FONT_SIZE = 72
+
 pygame.init()
 
-SPRITE_COLOR_CHANGE_EVENT = pygame.USEREVENT + 1
-BACKGROUND_COLOR_CHANGE_EVENT = pygame.USEREVENT + 2
 
-BLUE = pygame.Color('blue')
-LIGHTBLUE = pygame.Color('lightblue')
-DARKBLUE = pygame.Color('darkblue')
+background_image = pygame.transform.scale(pygame.image.load("Thank you!.jpeg"),
+                                          (SCREEN_WIDTH, SCREEN_HEIGHT))
 
-YELLOW = pygame.Color('yellow')
-MAGENTA = pygame.Color('magenta')
-ORANGE = pygame.Color('orange')
-WHITE = pygame.Color('white')
 
+font = pygame.font.SysFont("Times New Roman", FONT_SIZE)
 
 class Sprite(pygame.sprite.Sprite):
 
     def __init__(self, color, height, width):
         super().__init__()
         self.image = pygame.Surface([width, height])
-        self.image.fill(color)
+        self.image.fill(
+            pygame.Color('dodgerblue')) 
+        pygame.draw.rect(self.image, color, pygame.Rect(0, 0, width, height))
         self.rect = self.image.get_rect()
-        self.velocity = [random.choice([-1, 1]), random.choice([-1, 1])]
 
-    def update(self):
-        self.rect.move_ip(self.velocity)
-        boundary_hit = False
-        if self.rect.left <= 0 or self.rect.right >= 500:
-            self.velocity[0] = -self.velocity[0]
-        boundary_hit = True
-        if self.rect.top <= 0 or self.rect.bottom >= 400:
-           self.velocity[1] = -self.velocity[1]
-        boundary_hit = True
-        if boundary_hit:
-            pygame.event.post(pygame.event.Event(SPRITE_COLOR_CHANGE_EVENT))
-            pygame.event.post(pygame.event.Event(BACKGROUND_COLOR_CHANGE_EVENT))
-    def change_color(self):
-        self.image.fill(random.choice([YELLOW, MAGENTA, ORANGE, WHITE]))
+    def move(self, x_change, y_change):
+        self.rect.x = max(
+            min(self.rect.x + x_change, SCREEN_WIDTH - self.rect.width), 0)
+        self.rect.y = max(
+            min(self.rect.y + y_change, SCREEN_HEIGHT - self.rect.height), 0)
+        
 
-    def change_background_color(self):
-        global bg_color
-        bg_color = random.choice([BLUE, LIGHTBLUE, DARKBLUE])
+screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Sprite Collision")
+all_sprites = pygame.sprite.Group()
 
-all_sprite_list = pygame.sprite.Group()
-sp1 = Sprite(WHITE, 20, 30)
-sp1.rect.x = random.randint(0, 480)
-sp1.rect.y = random.randint(0, 370)
-all_sprite_list.add(sp1)
+sprite1 = Sprite(pygame.Color('black'), 20, 30)
+sprite1.rect.x, sprite1.rect.y = random.randint(
+    0, SCREEN_WIDTH - sprite1.rect.width), random.randint(
+    0, SCREEN_HEIGHT - sprite1.rect.height)
+all_sprites.add(sprite1)
 
-screen = pygame.display.set_mode((500, 400))
-pygame.display.set_caption("Boundary Sprite")
-bg_color = BLUE
-screen.fill(bg_color)
+sprite2 = Sprite(pygame.Color('red'), 20, 30)
+sprite2.rect.x, sprite2.rect.y = random.randint(
+    0, SCREEN_WIDTH - sprite2.rect.width), random.randint(
+    0, SCREEN_HEIGHT - sprite2.rect.height)
+all_sprites.add(sprite2)  
 
-exit = False
+running, won = True, False
 clock = pygame.time.Clock()
 
-while not exit:
+while running:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            exit = True
-        elif event.type == SPRITE_COLOR_CHANGE_EVENT:
-            sp1.change_color()
-        elif event.type == BACKGROUND_COLOR_CHANGE_EVENT:
-            sp1.change_background_color()
-    all_sprite_list.update()
-    screen.fill(bg_color)
-    all_sprite_list.draw(screen)
+        if event.type == pygame.QUIT or (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE):
+            running = False
+    if not won:
+        keys = pygame.key.get_pressed()
+        x_change = (keys[pygame.K_RIGHT] - keys[pygame.K_LEFT]) * MOVEMENT_SPEED
+        y_change = (keys[pygame.K_DOWN] - keys[pygame.K_UP]) * MOVEMENT_SPEED
+        sprite1.move(x_change, y_change)
+        if sprite1.rect.colliderect(sprite2.rect):
+            won = True
+
+screen.blit(background_image, (0, 0))
+all_sprites.draw(screen)
+
+if won:
+    win_text = font.render("You win!", True, pygame.Color('black'))
+    screen.blit(win_text, ((SCREEN_WIDTH - win_text.get_width()) // 2,
+    (SCREEN_HEIGHT - win_text.get_height()) // 2))
 
 pygame.display.flip()
-clock.tick(240)
+clock.tick(90)
 
 pygame.quit()
