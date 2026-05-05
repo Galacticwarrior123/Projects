@@ -1,5 +1,8 @@
-try:
-    number = int(input("Enter a number: "))
-except ValueError as ex:
-    print("Invalid input. Please enter a valid number.")
-    print("Error details:", ex)
+from tkinter import *
+
+window = Tk()
+
+window.title("Demo window")
+window.geometry("400x300")
+
+window.mainloop()
