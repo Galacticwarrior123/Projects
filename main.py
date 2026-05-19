@@ -1,18 +1,24 @@
-from tkinter import*
+from tkinter import *
 
 root = Tk()
-root.title("Number pad")
 
-root.geometry("300x400")
-nums = [[9,8,7],[6,5,4],[3,2,1],['#',0,'*']]
+root.geometry("400x300")
+root.title("main")
 
-for i in range(4):
-   root.columnconfigure(i, weight=1,minsize=75)
-   root.rowconfigure(i, weight=1,minsize=50)
-   for j in range(0,3):
-      frame = Frame(master=root, relief=SUNKEN, borderwidth=1)
-      frame.grid(row=i, column=j)
-      label = Label(master=frame, text=nums[i][j], bg="lightgray")
-      label.pack(padx=3, pady=3)
+def topwin():
+    top = Toplevel()
+    top.geometry("180x100")
+    top.title("toplevel")
+    
+    l2 = Label(top, text="This is toplevel window")
+    l2.pack()
+    
+    top.mainloop()
+
+l = Label(root, text="This is root window")
+btn = Button(root, text="click here to open another window", command=topwin)
+
+l.pack()
+btn.pack()
 
 root.mainloop()

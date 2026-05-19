@@ -1,37 +1,70 @@
-from tkinter import*
+from tkinter import *
+from tkinter import messagebox
+from PIL import Image, ImageTk
 
 root = Tk()
-root.title("Login app")
-root.geometry("400x400")
+root.title("Denomination Counter")
+root.geometry("600x400")
+root.config(bg="blue")
 
-frame = Frame(master=root,height=200,width=360,bg="lightgray")
 
-lb1 = Label(frame, text = "Full name",bg="lightgray",fg="black",width=12)
-lb2 = Label(frame, text = "Password",bg="lightgray",fg="black",width=12)
-lb3 = Label(frame, text = "Email ID",bg="lightgray",fg="black",width=12)
+Label(
+    root,
+    text = "Welcome to Denomination Counter",
+    bg = "blue",
+    font=("Arial",14)
+).pack()
 
-name_entry = Entry(frame)
-email_entry = Entry(frame)
-pass_entry = Entry(frame, show="*")
-def display():
-    name = name_entry.get()
-    greet = "Hey! " + name
-    message ="\n Congratulations for your new account!"
-    textbox.insert(END, greet)
-    textbox.insert(END, message)
+def topwin():
+    top = Toplevel()
+    top.title("Calculator")
+    top.geometry("400x300")
+    top.config(bg="blue")
 
-textbox = Text(bg="#BEBEBE", fg="black")
+    Label(top,text="Enter the amount:", bg="blue").pack(pady=5)
 
-btn = Button(text= "Create Account", command=display, bg="lightgray")
+    entry = Entry(top)
+    entry.pack()
 
-frame.place(x=20,y=0)
-lb1.place(x=20,y=20)
-lb2.place(x=20,y=80)
-lb3.place(x=20,y=140)
-name_entry.place(x=150,y=20)
-email_entry.place(x=150,y=80)
-pass_entry.place(x=150,y=140)
-textbox.place(y=250)
-btn.place(x=130,y=210)
+    e1= Entry(top)
+    e2= Entry(top)
+    e3= Entry(top)
+
+    def calc():
+        amt=int(entry.get())
+        n2000 = amt // 2000
+        amt = amt % 2000
+        
+        n500 = amt // 500
+        amt = amt % 500
+     
+        n100 = amt // 100
+    
+        e1.delete(0, END)
+        e2.delete(0, END)
+        e3.delete(0, END)
+
+        e1.insert(0,n2000)
+        e2.insert(0,n500)
+        e3.insert(0,n100)
+
+    Button(top,text="Calculate", command=calc, bg="white").pack(pady=10)
+
+    Label(top,text=" 2000 notes:", bg="black").pack()
+    e1.pack()
+
+    Label(top,text=" 500 notes:", bg="black").pack()
+    e2.pack()
+
+    Label(top,text=" 100 notes:", bg="black").pack()
+    e3.pack()
+
+    Button(
+        root,
+        text="Start",
+        command=topwin,
+        bg="blue",
+        fg="white"
+    ).pack(pady=20)
 
 root.mainloop()
